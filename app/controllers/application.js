@@ -6,5 +6,10 @@ export default Ember.Controller.extend({
   chefs: [
     {name: 'Gordon Ramsay', cookingToday: true},
     {name: 'Anthony Bourdain', cookingToday: false},
-  ]
+  ],
+  actions: {
+    toggleCookingToday(chef) {
+      Ember.set(chef, 'cookingToday', !chef.cookingToday);
+    }
+  }
 });

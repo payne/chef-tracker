@@ -10,3 +10,11 @@
 </p>
 
 <p>Name: {{input value=chefName}}</p>
+
+<p>Our chefs are:
+  <ol>
+    {{#each chefs as |chef|}}
+    <li>Delicious food, cooked by {{chef}}</li>
+    {{/each}}
+  </ol>
+</p>

@@ -13,7 +13,7 @@
 
 <p>Our chefs are:
   <ol>
-    {{#each chefs as |chef|}}
+    {{#each model as |chef|}}
       {{#if chef.cookingToday}}
         <li class="available">{{chef.name}} <button {{action 'toggleCookingToday' chef}}>Exit</button></li>
       {{else}}

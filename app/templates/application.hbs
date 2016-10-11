@@ -14,7 +14,11 @@
 <p>Our chefs are:
   <ol>
     {{#each chefs as |chef|}}
-    <li>Delicious food, cooked by {{chef.name}}.  Cooking today: {{chef.cookingToday}}</li>
+      {{#if chef.cookingToday}}
+        <li>{{chef.name}}</li>
+      {{else}}
+        <li><s>{{chef.name}}</s></li>
+      {{/if}}
     {{/each}}
   </ol>
 </p>

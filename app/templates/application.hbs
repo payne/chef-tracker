@@ -15,9 +15,9 @@
   <ol>
     {{#each chefs as |chef|}}
       {{#if chef.cookingToday}}
-        <li>{{chef.name}}</li>
+        <li class="available">{{chef.name}}</li>
       {{else}}
-        <li><s>{{chef.name}}</s></li>
+        <li class="not-available">{{chef.name}}</li>
       {{/if}}
     {{/each}}
   </ol>

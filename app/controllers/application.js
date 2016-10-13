@@ -5,7 +5,10 @@ export default Ember.Controller.extend({
   chefName: `chef`,
   actions: {
     toggleCookingToday(chef) {
-      Ember.set(chef, 'cookingToday', !chef.cookingToday);
+      console.log("About to toggle: " + chef.get('name'));
+      Ember.set(chef, 'cookingToday', !chef.get('cookingToday'));
+      chef.save();
+      console.log("\tNew value is " + chef.get('cookingToday'));
     }
   }
 });

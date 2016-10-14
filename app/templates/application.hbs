@@ -11,7 +11,7 @@
 
 <p>Name: {{input value=chefName}}</p>
 
-<p>Our chefs are:
+<p>There are {{model.length}} chefs; then are:
   <ol>
     {{#each model as |chef|}}
       {{#if chef.cookingToday}}
@@ -21,7 +21,6 @@
           <button {{action 'toggleCookingToday' chef}}>Enter</button>
           <button {{action 'destroyChef' chef}}>Fire</button>
         </li>
-
       {{/if}}
     {{/each}}
   </ol>

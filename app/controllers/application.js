@@ -15,6 +15,9 @@ export default Ember.Controller.extend({
       console.log('saveNewChef: newChefName=' + this.newChefName);
         this.store.createRecord('chef',{name: this.newChefName, cookingToday: false}).save();
         this.set('newChefName','');
+    },
+    destroyChef(chef) {
+      chef.destroyRecord();
     }
   }
 });

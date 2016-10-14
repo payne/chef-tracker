@@ -17,7 +17,11 @@
       {{#if chef.cookingToday}}
         <li class="available">{{chef.name}} <button {{action 'toggleCookingToday' chef}}>Exit</button></li>
       {{else}}
-        <li class="not-available">{{chef.name}} <button {{action 'toggleCookingToday' chef}}>Enter</button></li>
+        <li class="not-available">{{chef.name}}
+          <button {{action 'toggleCookingToday' chef}}>Enter</button>
+          <button {{action 'destroyChef' chef}}>Delete</button>
+        </li>
+
       {{/if}}
     {{/each}}
   </ol>

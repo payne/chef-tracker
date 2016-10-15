@@ -11,7 +11,9 @@
 
 <p>Name: {{input value=chefName}}</p>
 
-<p>There are {{model.length}} chefs; then are:
+<p>{{cookingChefs.length}} of our {{model.length}} {{chefName}} are cooking right now!</p>
+  <p>Our {{chefName}}s are:</p>
+  <p>
   <ol>
     {{#each model as |chef|}}
       {{#if chef.cookingToday}}

@@ -24,6 +24,13 @@
           <button {{action 'destroyChef' chef}}>Fire</button>
         </li>
       {{/if}}
+      <ul>
+        <li>Number of students:
+            <button {{action 'incrementStudents' chef -1}}>-</button>
+            {{chef.numberOfStudents}}
+            <button {{action 'incrementStudents' chef 1}}>+</button>
+        </li>
+      </ul>
     {{/each}}
   </ol>
 </p>

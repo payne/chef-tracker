@@ -14,11 +14,14 @@ export default Ember.Controller.extend({
     },
     saveNewChef() {
       console.log('saveNewChef: newChefName=' + this.newChefName);
-        this.store.createRecord('chef',{name: this.newChefName, cookingToday: false}).save();
+        this.store.createRecord('chef',{name: this.newChefName, cookingToday: false, numberOfStudents: 0}).save();
         this.set('newChefName','');
     },
     destroyChef(chef) {
       chef.destroyRecord();
+    },
+    incrementStudents(chef,amount) {
+      Ember.set(chef, 'numberOfStudents', amount + Ember.get(chef,'numberOfStudents'));
     }
   }
 });

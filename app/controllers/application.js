@@ -22,6 +22,7 @@ export default Ember.Controller.extend({
     },
     incrementStudents(chef,amount) {
       Ember.set(chef, 'numberOfStudents', amount + Ember.get(chef,'numberOfStudents'));
+      chef.save();
     }
   }
 });

@@ -1,41 +1,5 @@
-<h1>Chef Tracker</h1>
-<h2>This is the challenge-1 branch! code is on <a href="https://github.com/payne/chef-tracker/commits/challenge-1">github here</a></h2>
-<p>Is your favorite {{chefName}} cooking right now?
-</p>
-
-<p>Find out with <b>Chef Tracker</b>, the hottest new {{chefName}}-tracking app on the market.
-</p>
-
-<p>We know some {{chefName}}s are better than others, so we want to tell you who's cooking at our restaurant right now. Is it your favorite {{chefName}}? Then maybe you should visit!
-</p>
-
-<p>Name: {{input value=chefName}}</p>
-
-<p>{{cookingChefs.length}} of our {{model.length}} {{chefName}} are cooking right now!</p>
-  <p>Our {{chefName}}s are:</p>
-  <p>
-  <ol>
-    {{#each model as |chef|}}
-      {{#if chef.cookingToday}}
-        <li class="available">{{chef.name}} <button {{action 'toggleCookingToday' chef}}>Exit</button></li>
-      {{else}}
-        <li class="not-available">{{chef.name}}
-          <button {{action 'toggleCookingToday' chef}}>Enter</button>
-          <button {{action 'destroyChef' chef}}>Fire</button>
-        </li>
-      {{/if}}
-      <ul>
-        <li>Number of students:
-            <button {{action 'incrementStudents' chef -1}}>-</button>
-            {{chef.numberOfStudents}}
-            <button {{action 'incrementStudents' chef 1}}>+</button>
-        </li>
-      </ul>
-    {{/each}}
-  </ol>
-</p>
-
-<p>
-  {{input value=newChefName}}
-  <button {{action 'saveNewChef'}}>Save</button>
-</p>
+{{link-to "About" 'about'}}
+{{link-to "Chefs" 'chefs'}}
+{{link-to "Chef Training" 'training'}}
+<hr>
+{{outlet}}

@@ -19,7 +19,8 @@ This in chefs.hbs
   <ol>
     {{#each model as |chef|}}
       {{#if chef.cookingToday}}
-        <li class="available">{{chef.name}} <button {{action 'toggleCookingToday' chef}}>Exit</button></li>
+        <li class="available">
+          {{#link-to 'chef' chef}}{{chef.name}}{{/link-to}} <button {{action 'toggleCookingToday' chef}}>Exit</button></li>
       {{else}}
         <li class="not-available">{{chef.name}}
           <button {{action 'toggleCookingToday' chef}}>Enter</button>

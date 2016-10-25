@@ -20,7 +20,7 @@ This in chefs.hbs
     {{#each model as |chef|}}
       {{#if chef.cookingToday}}
         <li class="available">
-          {{#link-to 'chef' chef}}{{chef.name}}{{/link-to}} <button {{action 'toggleCookingToday' chef}}>Exit</button></li>
+          {{#link-to 'chefs.chef' chef}}{{chef.name}}{{/link-to}} <button {{action 'toggleCookingToday' chef}}>Exit</button></li>
       {{else}}
         <li class="not-available">{{chef.name}}
           <button {{action 'toggleCookingToday' chef}}>Enter</button>
@@ -42,3 +42,7 @@ This in chefs.hbs
   {{input value=newChefName}}
   <button {{action 'saveNewChef'}}>Save</button>
 </p>
+
+
+<p>Outlet</p>
+{{outlet}}

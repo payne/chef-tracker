@@ -25,6 +25,17 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+  
+  // for c9.io per http://thejsguy.com/2016/01/12/running-ember-cli-on-cloud-9-ide.html
+  ENV.contentSecurityPolicy = {
+    'default-src':  "'none'",
+    'script-src':   "'self' http://chef-tracker-payne.c9users.io:8081",
+    'font-src':     "'self'",
+    'connect-src':  "'self' ws://chef-tracker-payne.c9users.io:8081",
+    'img-src':      "'self'",
+    'style-src':    "'self' http://chef-tracker-payne.c9users.io:8081",
+    'media-src':    "'self'"
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

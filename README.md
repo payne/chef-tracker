@@ -1,5 +1,15 @@
 # Chef-tracker
 
+
+http://thejsguy.com/2016/01/12/running-ember-cli-on-cloud-9-ide.html is good information for using ember cli on c9.io
+
+1. Start with a HTML5 workspace
+2. `npm install -g bower`
+3. `npm install -g ember-cli`
+4. `ember new my-app` or use git to checkout your application
+5. edit .ember-cli and add `"live-reload-port": 8081`
+6. edit config/environment.js adding a content security policy that looks like this: 
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 

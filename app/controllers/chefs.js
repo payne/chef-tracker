@@ -5,6 +5,8 @@ export default Ember.Controller.extend({
   chefName: `chef`,
   newChefName: '',
   cookingChefs: Ember.computed.filterBy('model','cookingToday',true),
+  numberOfStudentsArray: Ember.computed.mapBy('model', 'numberOfStudents'),
+  numberOfStudents: Ember.computed.sum('numberOfStudentsArray'),
   actions: {
     toggleCookingToday(chef) {
       console.log("About to toggle: " + chef.get('name'));
